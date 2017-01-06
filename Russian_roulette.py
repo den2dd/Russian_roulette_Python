@@ -25,7 +25,11 @@ for i in range(0,7):
     gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
     turtle.circle(22)
 
-
+turtle.fillcolor('brown')
+gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
+turtle.begin_fill()
+turtle.circle(22)
+turtle.end_fill()
 
 answer = ''
 while answer != 'N':
