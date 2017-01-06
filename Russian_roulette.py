@@ -32,24 +32,28 @@ def draw_pistol(base_x, base_y):
         gotoxy(base_x+math.sin(phi_rad)*R, base_y+math.cos(phi_rad)*R + 60)
         draw_circle(22, 'white')
 
+def rotate_pistol(base_x, base_y, start):
+    for i in range(start, random.randrange(7, 100)):
+        phi_rad = PHI * i * math.pi / 180.0
+        gotoxy(base_x+math.sin(phi_rad) * R, base_y+math.cos(phi_rad) * R + 60)
+        draw_circle(22, 'brown')
+        draw_circle(22, 'white')
+
+    gotoxy(base_x+math.sin(phi_rad) * R, base_y+math.cos(phi_rad) * R + 60)
+    draw_circle(22, 'brown')
+
+    return i % 7
+
 draw_pistol(100, 100)
 
 answer = ''
 start = 0
 while answer != 'N':
-    answer = turtle.textinput("Играть", "Y/N")
+    answer = turtle.textinput("Играть?", "Y/N")
+
     if answer == 'Y':
+        start = rotate_pistol(100, 100, start)
 
-        for i in range(start, random.randrange(7, 100)):
-            phi_rad = PHI * i * math.pi / 180.0
-            gotoxy(math.sin(phi_rad) * R, math.cos(phi_rad) * R + 60)
-            draw_circle(22, 'brown')
-            draw_circle(22, 'white')
-
-        gotoxy(math.sin(phi_rad) * R, math.cos(phi_rad) * R + 60)
-        draw_circle(22, 'brown')
-
-        start = i % 7
         if start == 0:
             gotoxy(-150, 200)
             turtle.write('Вы проиграли!', font=('Arial', 18, 'normal'))
