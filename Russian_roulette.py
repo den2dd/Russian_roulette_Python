@@ -10,6 +10,11 @@ turtle.speed(0)
 
 gotoxy(0,0)
 turtle.circle(80)
+gotoxy(0,160)
+turtle.fillcolor('red')
+turtle.begin_fill()
+turtle.circle(5)
+turtle.end_fill()
 
 answer = ''
 while answer != 'N':
