@@ -1,8 +1,12 @@
 import turtle
 import random
 
-turtle.circle(20)
 turtle.speed(0)
+
+turtle.penup()
+turtle.goto(0,0)
+turtle.pendown()
+turtle.circle(80)
 
 answer = ''
 while answer != 'N':
