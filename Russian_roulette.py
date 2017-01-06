@@ -33,17 +33,25 @@ for i in range(0,random.randrange(7,100)):
 gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
 draw_circle(22, 'brown')
 
-if i % 7 ==0:
-    gotoxy(-150,200)
-    turtle.write('Вы проиграли!', font = ('Arial', 18, 'normal'))
+
 
 answer = ''
 while answer != 'N':
-    answer = turtle.textinput("Нарисовать окружность", "Y/N")
+    answer = turtle.textinput("Играть", "Y/N")
     if answer == 'Y':
-        turtle.penup()
-        turtle.goto(random.randrange(-300,300), random.randrange(-200,200))
-        turtle.pendown()
-        turtle.circle(random.randrange(1,100))
+
+        for i in range(0, random.randrange(7, 100)):
+            phi_rad = phi * i * math.pi / 180.0
+            gotoxy(math.sin(phi_rad) * r, math.cos(phi_rad) * r + 60)
+            draw_circle(22, 'brown')
+            draw_circle(22, 'white')
+
+        gotoxy(math.sin(phi_rad) * r, math.cos(phi_rad) * r + 60)
+        draw_circle(22, 'brown')
+
+        if i % 7 == 0:
+            gotoxy(-150, 200)
+            turtle.write('Вы проиграли!', font=('Arial', 18, 'normal'))
+
     else:
         pass
