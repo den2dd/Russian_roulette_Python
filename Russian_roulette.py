@@ -1,5 +1,6 @@
 import turtle
 import random
+import math
 
 def gotoxy(x,y):
     turtle.penup()
@@ -15,6 +16,16 @@ turtle.fillcolor('red')
 turtle.begin_fill()
 turtle.circle(5)
 turtle.end_fill()
+
+phi = 360 / 7
+r = 50
+
+for i in range(0,7):
+    phi_rad = phi * i * math.pi / 180.0
+    gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
+    turtle.circle(22)
+
+
 
 answer = ''
 while answer != 'N':
