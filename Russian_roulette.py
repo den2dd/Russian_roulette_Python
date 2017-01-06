@@ -1,11 +1,14 @@
 import turtle
 import random
 
+def gotoxy(x,y):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+
 turtle.speed(0)
 
-turtle.penup()
-turtle.goto(0,0)
-turtle.pendown()
+gotoxy(0,0)
 turtle.circle(80)
 
 answer = ''
