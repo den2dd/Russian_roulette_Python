@@ -7,15 +7,18 @@ def gotoxy(x,y):
     turtle.goto(x, y)
     turtle.pendown()
 
+def draw_circle(r, color):
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    turtle.circle(r)
+    turtle.end_fill()
+
 turtle.speed(0)
 
 gotoxy(0,0)
 turtle.circle(80)
 gotoxy(0,160)
-turtle.fillcolor('red')
-turtle.begin_fill()
-turtle.circle(5)
-turtle.end_fill()
+draw_circle(5, 'red')
 
 phi = 360 / 7
 r = 50
@@ -25,11 +28,9 @@ for i in range(0,7):
     gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
     turtle.circle(22)
 
-turtle.fillcolor('brown')
+
 gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
-turtle.begin_fill()
-turtle.circle(22)
-turtle.end_fill()
+draw_circle(22, 'brown')
 
 answer = ''
 while answer != 'N':
