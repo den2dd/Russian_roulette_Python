@@ -18,18 +18,21 @@ def draw_circle(r, color):
 
 turtle.speed(0)
 
-def draw_pistol():
-    gotoxy(0,0)
+def draw_pistol(base_x, base_y):
+    # основной круг
+    gotoxy(base_x, base_y)
     turtle.circle(80)
-    gotoxy(0,160)
+    # мушка
+    gotoxy(base_x, base_y+160)
     draw_circle(5, 'red')
 
+    # барабан
     for i in range(0,7):
         phi_rad = PHI * i * math.pi / 180.0
-        gotoxy(math.sin(phi_rad)*R, math.cos(phi_rad)*R + 60)
+        gotoxy(base_x+math.sin(phi_rad)*R, base_y+math.cos(phi_rad)*R + 60)
         draw_circle(22, 'white')
 
-draw_pistol()
+draw_pistol(100, 100)
 
 answer = ''
 start = 0
