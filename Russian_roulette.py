@@ -23,15 +23,12 @@ draw_circle(5, 'red')
 phi = 360 / 7
 r = 50
 
-for i in range(0,random.randrange(7,100)):
+for i in range(0,7):
     phi_rad = phi * i * math.pi / 180.0
     gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
-    draw_circle(22, 'brown')
     draw_circle(22, 'white')
 
 
-gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
-draw_circle(22, 'brown')
 
 
 
